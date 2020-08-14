@@ -15,6 +15,12 @@ Jorge Alvarez <alvarez.jeap@gmail.com>
 
 ## **Playground**
 
+- Create an ssh key
+
+```sh
+ssh-keygen -t rsa -C "" -f ./ssh-keys/aws_testing -q -N ""
+```
+
 - Create
 
 ```sh
@@ -24,6 +30,8 @@ terraform apply --auto-approve \
     -var "aws_secret_key=${AWS_SECRET_KEY}"
 ```
 
+**Note. `SSH_PRIVATE_KEY_PATH` should be the absoulte path.**
+
 - Destroy
 
 ```sh
@@ -32,3 +40,5 @@ terraform destroy --auto-approve \
     -var "aws_access_key=${AWS_ACCESS_KEY}" \
     -var "aws_secret_key=${AWS_SECRET_KEY}"
 ```
+
+**Note. `SSH_PRIVATE_KEY_PATH` should be the absoulte path.**
