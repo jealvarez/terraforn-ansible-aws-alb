@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: install httpd
+      package:
+        name: httpd
+        state: present
+
+    - name: replace index.html
+      template:
+        src: ./index.html
+        dest: "/var/www/html/index.html"
+        mode: u=rw,g=r,o=r
+
+    - name: start httpd
+      service:
+        name: httpd
+        state: started
