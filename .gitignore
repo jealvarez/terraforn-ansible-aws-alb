@@ -2,6 +2,7 @@
 
 .terraform*
 *tfstate**
+!.terraform-version
 
 ssh-keys/*
 !ssh-keys/.gitkeep
